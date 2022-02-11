@@ -18,7 +18,7 @@ set backspace=indent,eol,start " Have 'normal' backspace in insert mode
 set hidden " don't clear buffer, see https://news.ycombinator.com/item?id=16558463 for reason
 set clipboard+=unnamed  " Use the system clipboard, requires vim-gtk3
 
-syntax on # enable syntax color options
+syntax on " enable syntax color options
 
 filetype plugin indent on
 

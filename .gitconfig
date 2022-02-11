@@ -1,0 +1,7 @@
+[user]
+	name = RoyStegeman
+	email = roystegeman@live.nl
+[init]
+	defaultBranch = main
+[core]
+	excludesfile = ~/.gitignore
