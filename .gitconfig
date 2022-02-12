@@ -5,3 +5,7 @@
 	defaultBranch = main
 [core]
 	excludesfile = ~/.gitignore
+[alias]
+	br = branch
+	co = checkout
+	s = status
