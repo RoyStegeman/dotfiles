@@ -18,7 +18,16 @@ set backspace=indent,eol,start " Have 'normal' backspace in insert mode
 set hidden " don't clear buffer, see https://news.ycombinator.com/item?id=16558463 for reason
 set clipboard+=unnamed  " Use the system clipboard, requires vim-gtk3
 
-syntax on " enable syntax color options
-
 filetype plugin indent on
+
+syntax enable " enable syntax color options
+
+autocmd FileType bib setlocal iskeyword+=:
+autocmd FileType tex setlocal iskeyword+=: 
+let g:tex_flavor = 'latex' " Identify .tex as latex, so vimtex can load them
+let g:vimtex_view_method = 'zathura' " Now needs to be set here instead of in tex.vim? why?
+
+
+set wildmenu
+set wildignore+=*.aux,*.out,*.toc,*.log,*pdf   "LaTeX intermediate files.
 
