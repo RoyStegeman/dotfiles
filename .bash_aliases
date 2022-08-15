@@ -18,7 +18,7 @@ extract () {
       echo "'$1' is not a valid file!"
   fi
 }
- 
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -31,10 +31,17 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+quickgrep () {
+  grep -rnwi '.' -e $1
+}
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+# use sysyadm to store system wide config files
+alias sysyadm="sudo yadm -Y /etc/yadm"
+
 
 tmks () {
   tmux kill-session -t $1
@@ -45,4 +52,4 @@ tmls () {
 tmas () {
   tmux attach-session -t $1
 }
- 
+
