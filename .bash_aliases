@@ -42,6 +42,8 @@ alias l='ls -CF'
 # use sysyadm to store system wide config files
 alias sysyadm="sudo yadm -Y /etc/yadm"
 
+alias vim="nvim"
+alias vimdiff="nvim -d"
 
 tmks () {
   tmux kill-session -t $1

@@ -37,7 +37,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -68,7 +67,13 @@ if [ -f "/home/roy/miniconda3/etc/profile.d/mamba.sh" ]; then
 fi
 # <<< conda initialize <<<
 
-export MANPATH="$MANPATH:/usr/local/texlive/2021/texmf-dist/doc/man"
-export INFOPATH="$INFOPATH:/usr/local/texlive/2021/texmf-dist/doc/info"
-PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
-export PATH=/home/roy/.local/bin:$PATH
+source /usr/share/doc/fzf/examples/key-bindings.bash
+
+# set nvim as default editor
+#export VISUAL=nvim
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+# change folder color https://askubuntu.com/a/466203
+export LS_COLORS=$LS_COLORS:'di=1;36:'
+
