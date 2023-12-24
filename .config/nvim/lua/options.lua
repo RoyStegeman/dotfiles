@@ -17,3 +17,5 @@ vim.o.mouse = 'a' -- enables the mouse in all modes
 
 vim.o.list = true -- show visual for spaces
 
+vim.o.expandtab=true -- only use space characters, never tabs
+
