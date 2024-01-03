@@ -15,3 +15,5 @@
   ```
     dotfiles config --local status.showUntrackedFiles no
   ```
+## TODO (maybe)
+- add bash file to automate the setup on a clean machine
