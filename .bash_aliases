@@ -22,9 +22,9 @@ extract () {
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    # alias ls='ls --color=auto'
+    # alias dir='dir --color=auto'
+    # alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -35,23 +35,14 @@ quickgrep () {
   grep -rnwi '.' -e $1
 }
 
-# some more ls aliases
+# These require donwloading the corresponding cli tools:
+if [ -x /usr/bin/exa ]; then
+    alias ls='exa'
+fi
 alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-# use sysyadm to store system wide config files
-alias sysyadm="sudo yadm -Y /etc/yadm"
 
 alias vim="nvim"
 alias vimdiff="nvim -d"
 
-tmks () {
-  tmux kill-session -t $1
-}
-tmls () {
-  tmux ls
-}
-tmas () {
-  tmux attach-session -t $1
-}
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.local/share/dotfiles.git --work-tree=$HOME'
 
