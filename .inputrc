@@ -1,0 +1,4 @@
+# pres esc in bash to edit the line using vim motions
+# See: echo arg1 <em>(want to insert arg5 here)</em> arg2 arg3 arg4<strong>[i]</strong>
+set editing-mode vi
+
