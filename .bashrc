@@ -77,3 +77,5 @@ export EDITOR="$VISUAL"
 # change folder color https://askubuntu.com/a/466203
 export LS_COLORS=$LS_COLORS:'di=1;36:'
 
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.local/share/dotfiles.git --work-tree=$HOME'
+
