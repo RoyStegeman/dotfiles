@@ -2,20 +2,21 @@ return {
 
     { 'numToStr/Comment.nvim', opts = {} }, -- comment out lines (provides e.g. gcc)
 
-    {
-        "ellisonleao/gruvbox.nvim",
-        priority = 1000, -- priority 1000 to ensure it's loaded before the ther plugins
-        config = function()
-            vim.cmd("colorscheme gruvbox")
-        end
-    },
-
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
 
     "neovim/nvim-lspconfig",
 
     'folke/neodev.nvim',
+
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        config = function()
+             vim.cmd("colorscheme catppuccin-frappe")
+        end
+    },
 
     {
       "nvim-tree/nvim-tree.lua",
