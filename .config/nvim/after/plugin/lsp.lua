@@ -27,6 +27,36 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
+-- clean up diagnostics by not printing them to the right and instead
+-- showin upon hover
+local function setup_diags()
+  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics,
+    {
+      virtual_text = false,
+      signs = true,
+      update_in_insert = false,
+      underline = true,
+    }
+  )
+  vim.keymap.set('n', '<leader>i', function()
+      -- If we find a floating window, close it.
+      local found_float = false
+      for _, win in ipairs(vim.api.nvim_list_wins()) do
+          if vim.api.nvim_win_get_config(win).relative ~= '' then
+              vim.api.nvim_win_close(win, true)
+              found_float = true
+          end
+      end
+
+      if found_float then
+          return
+      end
+
+      vim.diagnostic.open_float(nil, { focus = false, scope = 'cursor' })
+  end, { desc = 'Toggle Diagnostics' })
+end
+
 -- mason
 require("mason").setup()
 require("mason-lspconfig").setup_handlers({
@@ -53,4 +83,6 @@ require("mason-lspconfig").setup_handlers({
     end
 
 })
+
+setup_diags()
 
