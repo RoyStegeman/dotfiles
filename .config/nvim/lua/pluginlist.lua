@@ -1,6 +1,6 @@
 return {
 
-    { 'numToStr/Comment.nvim', opts = {} }, -- comment out lines
+    { 'numToStr/Comment.nvim', opts = {} }, -- comment out lines (provides e.g. gcc)
 
     {
         "ellisonleao/gruvbox.nvim",
@@ -18,14 +18,26 @@ return {
     'folke/neodev.nvim',
 
     {
-        'hrsh7th/nvim-cmp',
-        dependencies = {
-            'L3MON4D3/LuaSnip',
-            'saadparwaiz1/cmp_luasnip',
-            'rafamadriz/friendly-snippets',
-            'hrsh7th/cmp-nvim-lsp',
+      "nvim-tree/nvim-tree.lua",
+      version = "*",
+      lazy = false,
+      dependencies = {
+        "nvim-tree/nvim-web-devicons",
+      },
+      config = function()
+        require("nvim-tree").setup {}
+      end,
+    },
 
-        },
+    {
+        'hrsh7th/nvim-cmp',
+         dependencies = {
+             'L3MON4D3/LuaSnip',
+             'saadparwaiz1/cmp_luasnip',
+             'rafamadriz/friendly-snippets',
+             'hrsh7th/cmp-nvim-lsp',
+
+         },
     },
 
     {
