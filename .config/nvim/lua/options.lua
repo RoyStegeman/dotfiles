@@ -19,3 +19,5 @@ vim.o.list = true -- show visual for spaces
 
 vim.o.expandtab=true -- only use space characters, never tabs
 
+vim.o.wrap = false -- don't soft-wrap lines in the editor
+
