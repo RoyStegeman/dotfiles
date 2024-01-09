@@ -10,12 +10,9 @@ return {
     'folke/neodev.nvim',
 
     {
-        "catppuccin/nvim",
-        name = "catppuccin",
+        "ellisonleao/gruvbox.nvim",
+        name = "gruvbox",
         priority = 1000,
-        config = function()
-             vim.cmd("colorscheme catppuccin-frappe")
-        end
     },
 
     {
