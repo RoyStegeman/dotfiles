@@ -17,3 +17,4 @@
   ```
 ## TODO (maybe)
 - add bash file to automate the setup on a clean machine
+- Instead of making `$HOME` the `work-tree`, just keep a repo on my machine as any other and symlink (write bash script to set up the symlinks)
