@@ -7,6 +7,8 @@ return {
 
     "neovim/nvim-lspconfig",
 
+    "lewis6991/gitsigns.nvim", -- git decorations (signs for modified lines since last commit)
+
     'folke/neodev.nvim',
 
     {
