@@ -9,7 +9,11 @@
 [alias]
 	br = branch
 	co = checkout
-	s = status
+        s = status
+        ; run pre-commit on files changed since master
+	pre-commit-changed = "!f() { CHANGED_FILES=$(git diff --name-only master...HEAD); if [ -z \"$CHANGED_FILES\" ]; then echo \"No changed files since master.\"; else echo \"$CHANGED_FILES\" | xargs pre-commit run --files; fi; }; f"
 [diff]
         wsErrorHighlight = all
 
+[rerere]
+	enabled = true
