@@ -70,10 +70,15 @@ fi
 source /usr/share/doc/fzf/examples/key-bindings.bash
 
 # set nvim as default editor
-#export VISUAL=nvim
-export VISUAL=vim
+export VISUAL=nvim
+# export VISUAL=vim
 export EDITOR="$VISUAL"
 
 # change folder color https://askubuntu.com/a/466203
 export LS_COLORS=$LS_COLORS:'di=1;36:'
+
+export PATH="~/.local/bin":$PATH
+
+# init zoxide
+eval "$(zoxide init bash --cmd cd)"
 
